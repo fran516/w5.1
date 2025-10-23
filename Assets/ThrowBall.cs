@@ -16,31 +16,31 @@ public class ThrowBall : MonoBehaviour
     void Update()
     {
         // Controls ball rotation 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             xAxis -= 5;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             xAxis += 5;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             zSpeed -= 50;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             zSpeed += 50;
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             spin -= 5;
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             spin += 5;
         }
@@ -49,8 +49,7 @@ public class ThrowBall : MonoBehaviour
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.AddForce(new Vector3(xAxis, 0.0f, zSpeed));
-            rb.AddTorque(new Vector3(0.0f, spin, 0.0f));
+            rb.AddTorque(new Vector3(spin, 0.0f, 0.0f));
         }
-    }
-        
+    }     
 }
